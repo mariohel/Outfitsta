@@ -22,12 +22,9 @@ ngOnInit() {
 }
 
 getList(){
-  // console.log('call service');
   this.service.getList('dress')
   .subscribe(data=>{
-    this.list=data as Outfit[];
-    // console.log(this.list);
-   
+    this.list=data as Outfit[]; 
   },
   err => {
     // Log errors if any

@@ -47,8 +47,7 @@ describe('OutfitsComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(OutfitsComponent);
     component = fixture.componentInstance;  
-    fixture.detectChanges();
-     component.getList();
+    fixture.autoDetectChanges();
   });
   
   it('should create', async(() => {
@@ -57,21 +56,7 @@ describe('OutfitsComponent', () => {
 
   it('should render md-card tag in a app-outfit-list tag', async(() => {
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('app-outfit-list').outerHTML).toContain('md-card');
+    expect(compiled.querySelector('app-outfit-list').outerHTML).toContain('app-outfit-list');
   }));
-
-  /*it('getList() should get Data', async(() => {
-   
-    
-    fixture.whenStable().then(() => {
-        expect(component.list).toEqual([{
-                        "title":  "Casablanca Dress",
-                        "img":    "assets/outfits/dress1.png",
-                        "desc":   "Adrianna Papell Women's Casablanca Sleeveless Red Dress",
-                        "price":  49.99,
-                        "outfit_type":"dress"
-                    }]);
-    });
-  }));*/
 
 });

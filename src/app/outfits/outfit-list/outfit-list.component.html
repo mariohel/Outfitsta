@@ -1,0 +1,19 @@
+<md-card class="outfit-card" *ngFor="let item of list | outfitType:type ">
+  <md-card-header>
+    <md-card-title>{{item.title}}</md-card-title>
+    <md-card-subtitle >{{item.price | currency:'USD':true}}</md-card-subtitle>
+    
+  </md-card-header>
+  <img md-card-image [src]="item.img">
+  <md-card-content>
+    <p [innerHtml]="item.desc" ></p>
+  </md-card-content>
+  <md-card-actions align="end">
+    <button md-icon-button>
+      <md-icon>share</md-icon>
+      </button>
+    <button md-icon-button>
+      <md-icon>add_shopping_cart</md-icon>
+      </button>
+  </md-card-actions>
+</md-card>

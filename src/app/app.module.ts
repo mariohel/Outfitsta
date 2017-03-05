@@ -15,7 +15,8 @@ import { OutfitListComponent } from './outfits/outfit-list/outfit-list.component
   declarations: [
     AppComponent,
     OutfitsComponent,
-    OutfitListComponent
+    OutfitListComponent,
+    OutfitTypePipe
   ],
   imports: [
     BrowserModule,
@@ -23,7 +24,7 @@ import { OutfitListComponent } from './outfits/outfit-list/outfit-list.component
     HttpModule,
     MaterialModule.forRoot()
   ],
-  providers: [OutfitsService,OutfitTypePipe],
+  providers: [OutfitsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

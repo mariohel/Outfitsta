@@ -12,7 +12,6 @@ export class OutfitsService {
 
   getList(type): Observable<Outfit[]> {
     return this.http.get('assets/data.json')
-     // .filter(data => (data as Outfit).outfit_type === "dress")
       .map(response => response.json());
 
   }

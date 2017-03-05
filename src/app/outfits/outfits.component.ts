@@ -2,14 +2,13 @@ import { Component, OnInit , Input} from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import {OutfitsService} from './outfits.service';
-import {OutfitTypePipe} from './outfit-type.pipe';
 import {Outfit} from './outfit.model';
 
 @Component({
   selector: 'app-outfits',
   templateUrl: './outfits.component.html',
   styleUrls: ['./outfits.component.css'],
-  providers: [OutfitsService,OutfitTypePipe]
+  providers: [OutfitsService]
 })
 export class OutfitsComponent implements OnInit{
 

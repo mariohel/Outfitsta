@@ -19,10 +19,9 @@ describe('OutfitsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [HttpModule,MaterialModule.forRoot()],
-      declarations: [ OutfitsComponent,OutfitListComponent,OutfitTypePipe ],
+      declarations: [ OutfitsComponent,OutfitListComponent,OutfitTypePipe],
       providers: [
         OutfitsService,
-        OutfitTypePipe,
         MockBackend,
         { provide: XHRBackend, useClass: MockBackend }
         ]      

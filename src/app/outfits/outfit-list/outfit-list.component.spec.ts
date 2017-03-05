@@ -21,7 +21,6 @@ describe('OutfitListComponent', () => {
       declarations: [ OutfitListComponent,OutfitTypePipe ],
       providers: [
         OutfitsService,
-        OutfitTypePipe,
         MockBackend,
         { provide: XHRBackend, useClass: MockBackend }
         ]      

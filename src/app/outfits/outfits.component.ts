@@ -13,6 +13,13 @@ import {Outfit} from './outfit.model';
 export class OutfitsComponent implements OnInit{
 
 list: Outfit[];
+cartList:Outfit[]=[];
+types:any[]=[
+  {'label':'Dresses','value':'dress',selected:true},
+  {'label':'Pants','value':'pant',selected:true},
+  {'label':'Shorts','value':'short',selected:true},
+  {'label':'Shirts','value':'shirt',selected:true},
+  {'label':'Shoes','value':'shoe',selected:true}];
 
 constructor(private service: OutfitsService) {}
 
@@ -30,5 +37,23 @@ getList(){
     console.log(err);
   });
 }
+
+toggleType(item){
+  item.selected= !item.selected;
+}
+
+onAddToCart(item) {
+    this.cartList.push(item);
+}
+
+get selectedTypes(){
+  var str="";
+  this.types.forEach(element => {
+    if(element.selected)
+      str+=(str)?","+element.value:element.value;
+  }); 
+  return str+'';
+}
+
 }
 

@@ -1,0 +1,9 @@
+.outfit-list {
+  margin-top: 20px;
+}
+.outfit-card {
+  width: 150px;
+  height: 90%;
+  margin: 5px;
+  vertical-align: middle;
+}

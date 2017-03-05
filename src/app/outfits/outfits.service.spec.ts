@@ -41,7 +41,7 @@ describe('OutfitsService', () => {
       expect(service).toBeDefined();
     }));
 
-    it('should have a service instance', inject([OutfitsService], (service: OutfitsService) => {
+    it('should get Data', inject([OutfitsService], (service: OutfitsService) => {
        service.getList('dress').subscribe((data) => {
             expect(data[0].title).toBe('Casablanca Dress');
         });

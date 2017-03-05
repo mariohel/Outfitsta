@@ -1,19 +1,23 @@
-<md-card class="outfit-card" *ngFor="let item of list | outfitType:type ">
-  <md-card-header>
-    <md-card-title>{{item.title}}</md-card-title>
-    <md-card-subtitle >{{item.price | currency:'USD':true}}</md-card-subtitle>
-    
-  </md-card-header>
-  <img md-card-image [src]="item.img">
-  <md-card-content>
-    <p [innerHtml]="item.desc" ></p>
-  </md-card-content>
-  <md-card-actions align="end">
-    <button md-icon-button>
-      <md-icon>share</md-icon>
-      </button>
-    <button md-icon-button>
-      <md-icon>add_shopping_cart</md-icon>
-      </button>
-  </md-card-actions>
-</md-card>
+<md-grid-list class="outfit-list" cols="7" rowHeight="500px" >
+  <md-grid-tile
+      *ngFor="let item of list | outfitType:type ">
+      <md-card class="outfit-card" >
+        <md-card-title-group>
+          <md-card-title>{{item.title}}</md-card-title>
+          <md-card-subtitle >{{item.price | currency:'USD':true}}</md-card-subtitle>          
+        </md-card-title-group>
+        <img md-card-lg-image [src]="item.img">
+        <md-card-content>
+          <p [innerHtml]="item.desc" ></p>
+        </md-card-content>
+        <md-card-footer align="end">
+            <button md-icon-button>
+              <md-icon>share</md-icon>
+              </button>
+            <button md-icon-button (click)="addToCartClicked(item)" >
+              <md-icon>add_shopping_cart</md-icon>
+              </button>
+         </md-card-footer>
+      </md-card>
+  </md-grid-tile>
+</md-grid-list>

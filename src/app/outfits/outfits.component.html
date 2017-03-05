@@ -1,1 +1,9 @@
-<app-outfit-list [type]="'dress,short,shoe'" [list]="list"></app-outfit-list>
+<button class="outfit_cart" md-icon-button>
+  <md-icon>shopping_cart</md-icon>{{cartList.length}}
+</button>
+<section>
+    <md-checkbox class="outfit_checkbox" [checked]="item.selected" (change)="toggleType(item)" *ngFor="let item of types">
+      {{ item.label }}
+    </md-checkbox>
+</section>
+<app-outfit-list [type]="selectedTypes" [list]="list" (addToCart)="onAddToCart(item)" ></app-outfit-list>

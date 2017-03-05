@@ -53,7 +53,7 @@ describe('OutfitsComponent', () => {
     expect(component).toBeTruthy();
   }));
 
-  it('should render md-card tag in a app-outfit-list tag', async(() => {
+  it('should render app-outfit-list tag', async(() => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('app-outfit-list').outerHTML).toContain('app-outfit-list');
   }));

@@ -2,6 +2,11 @@
 @import '~https://fonts.googleapis.com/icon?family=Material+Icons';
 @import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
 
+@font-face {
+    font-family: titleFont;
+    src: url('assets/FORTE.ttf')  format('truetype');
+}
+
 body {
     font-family: Roboto, 'Helvetica Neue', sans-serif;
     

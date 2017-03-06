@@ -10,11 +10,12 @@ import 'rxjs/add/operator/map';
 import { AppRoutingModule }     from '../app-routing.module';
 import { OutfitsService } from './outfits.service';
 import { OutfitTypePipe } from './outfit-type.pipe';
-import {Outfit} from './outfit.model';
+import { Outfit } from './outfit.model';
 import { OutfitsComponent } from './outfits.component';
 import { OutfitListComponent } from './outfit-list/outfit-list.component';
 import { OutfitItemComponent } from './outfit-item/outfit-item.component';
 import { CartComponent } from '../cart/cart.component';
+import { CartService } from '../cart/cart.service';
 import { PageNotFoundComponent }   from '../not-found.component';
 
 describe('OutfitsComponent', () => {
@@ -34,6 +35,7 @@ describe('OutfitsComponent', () => {
       ],
       providers: [
         OutfitsService,
+        CartService,
         MockBackend,
         { provide: XHRBackend, useClass: MockBackend },
         { provide: APP_BASE_HREF, useValue: '/'}

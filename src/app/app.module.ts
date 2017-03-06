@@ -13,8 +13,10 @@ import { OutfitsComponent } from './outfits/outfits.component';
 import { OutfitsService} from './outfits/outfits.service';
 import { OutfitTypePipe } from './outfits/outfit-type.pipe';
 import { OutfitListComponent } from './outfits/outfit-list/outfit-list.component';
-import { CartComponent } from './cart/cart.component';
 import { OutfitItemComponent } from './outfits/outfit-item/outfit-item.component';
+import { CartComponent } from './cart/cart.component';
+import { CartService } from './cart/cart.service';
+import { CartGuard } from './cart/cart.guard';
 
 
 @NgModule({
@@ -34,7 +36,7 @@ import { OutfitItemComponent } from './outfits/outfit-item/outfit-item.component
     MaterialModule.forRoot(),
     AppRoutingModule
   ],
-  providers: [OutfitsService],
+  providers: [OutfitsService,CartService,CartGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

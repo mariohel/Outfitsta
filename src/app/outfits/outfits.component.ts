@@ -2,6 +2,7 @@ import { Component, OnInit , Input} from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import {OutfitsService} from './outfits.service';
+import {CartService} from '../cart/cart.service';
 import {Outfit} from './outfit.model';
 
 @Component({
@@ -21,7 +22,7 @@ types:any[]=[
   {'label':'Shirts','value':'shirt',selected:true},
   {'label':'Shoes','value':'shoe',selected:true}];
 
-constructor(private service: OutfitsService) {}
+constructor(private service: OutfitsService , private cartService: CartService) {}
 
 ngOnInit() {
  this.getList();
@@ -44,6 +45,7 @@ toggleType(item){
 
 onAddToCart(item) {
     this.cartList.push(item);
+    this.cartService.addToCart(item);
 }
 
 get selectedTypes(){

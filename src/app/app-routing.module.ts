@@ -8,12 +8,13 @@ import { CartGuard }       from './cart/cart.guard';
 
 const routes: Routes = [
   { path: '',  component: OutfitsComponent },
-  { path: 'cart',     component: CartComponent , canLoad: [CartGuard] },
+  { path: 'cart',     component: CartComponent , canActivate: [CartGuard] },
   { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
-  exports: [ RouterModule ]
+  exports: [ RouterModule ],
+  providers: [CartGuard]
 })
 export class AppRoutingModule {}

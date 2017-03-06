@@ -6,6 +6,7 @@ import { AppRoutingModule }     from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent }   from './not-found.component';
 import { CartComponent } from './cart/cart.component';
+import { CartService } from './cart/cart.service';
 import { OutfitsComponent } from './outfits/outfits.component';
 import { OutfitListComponent } from './outfits/outfit-list/outfit-list.component';
 import { OutfitItemComponent } from './outfits/outfit-item/outfit-item.component';
@@ -26,7 +27,8 @@ describe('AppComponent', () => {
         OutfitTypePipe
       ],
       providers: [
-        {provide: OutfitsService, useValue: {}},
+        OutfitsService,
+        CartService ,
         OutfitTypePipe,
         {provide: APP_BASE_HREF, useValue: '/'}
       ]

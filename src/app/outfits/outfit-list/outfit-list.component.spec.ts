@@ -13,7 +13,7 @@ describe('OutfitListComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [MaterialModule.forRoot()],
-      declarations: [ OutfitItemComponent,OutfitListComponent,OutfitTypePipe]
+      declarations: [OutfitItemComponent, OutfitListComponent, OutfitTypePipe]
     })
     .compileComponents();
   }));
@@ -21,13 +21,13 @@ describe('OutfitListComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(OutfitListComponent);
     component = fixture.componentInstance;
-    component.list=[
+    component.list = [
       {
-            "title":  "Casablanca Dress",
-            "img":    "assets/outfits/dress1.png",
-            "desc":   "Adrianna Papell Women's Casablanca Sleeveless Red Dress",
-            "price":  49.99,
-            "outfit_type":"dress"
+            'title':  'Casablanca Dress',
+            'img':    'assets/outfits/dress1.png',
+            'desc':   'Adrianna Papell Women\'s Casablanca Sleeveless Red Dress',
+            'price':  49.99,
+            'outfit_type': 'dress'
         }
     ];
     fixture.detectChanges();
@@ -38,10 +38,9 @@ describe('OutfitListComponent', () => {
     expect(component).toBeTruthy();
   }));
 
-  /*it('should render a app-outfit-item tag in md-grid-list tag', async(() => {
+  it('should render a md-grid-list tag', async(() => {
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('md-grid-tile').outerHTML).toContain('app-outfit-item');
-  }));*/
+    expect(compiled.querySelector('md-grid-list').outerHTML).toContain('md-grid-list');
+  }));
 
- 
 });

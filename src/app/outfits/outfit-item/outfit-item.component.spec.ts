@@ -19,12 +19,12 @@ describe('OutfitItemComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(OutfitItemComponent);
     component = fixture.componentInstance;
-    component.item={
-            "title":  "Casablanca Dress",
-            "img":    "assets/outfits/dress1.png",
-            "desc":   "Adrianna Papell Women's Casablanca Sleeveless Red Dress",
-            "price":  49.99,
-            "outfit_type":"dress"
+    component.item = {
+            'title':  'Casablanca Dress',
+            'img':    'assets/outfits/dress1.png',
+            'desc':   'Adrianna Papell Women\'s Casablanca Sleeveless Red Dress',
+            'price':  49.99,
+            'outfit_type': 'dress'
         };
     fixture.detectChanges();
   });

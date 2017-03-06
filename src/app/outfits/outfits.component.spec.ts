@@ -7,7 +7,7 @@ import {MockBackend, MockConnection} from '@angular/http/testing';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-import { AppRoutingModule }     from '../app-routing.module';
+import { AppRoutingModule } from '../app-routing.module';
 import { OutfitsService } from './outfits.service';
 import { OutfitTypePipe } from './outfit-type.pipe';
 import { Outfit } from './outfit.model';
@@ -16,7 +16,7 @@ import { OutfitListComponent } from './outfit-list/outfit-list.component';
 import { OutfitItemComponent } from './outfit-item/outfit-item.component';
 import { CartComponent } from '../cart/cart.component';
 import { CartService } from '../cart/cart.service';
-import { PageNotFoundComponent }   from '../not-found.component';
+import { PageNotFoundComponent } from '../not-found.component';
 
 describe('OutfitsComponent', () => {
   let component: OutfitsComponent;
@@ -24,8 +24,12 @@ describe('OutfitsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [AppRoutingModule,HttpModule,MaterialModule.forRoot()],
-      declarations: [ 
+      imports: [
+        AppRoutingModule,
+        HttpModule,
+        MaterialModule.forRoot()
+      ],
+      declarations: [
         CartComponent,
         PageNotFoundComponent,
         OutfitsComponent,
@@ -39,7 +43,7 @@ describe('OutfitsComponent', () => {
         MockBackend,
         { provide: XHRBackend, useClass: MockBackend },
         { provide: APP_BASE_HREF, useValue: '/'}
-      ]      
+      ]
     })
     .compileComponents();
   }));
@@ -48,11 +52,11 @@ describe('OutfitsComponent', () => {
     mockBackend.connections.subscribe((conn: MockConnection) => {
                 conn.mockRespond(new Response(new ResponseOptions(
                 ` {
-                        "title":  "Casablanca Dress",
-                        "img":    "assets/outfits/dress1.png",
-                        "desc":   "Adrianna Papell Women's Casablanca Sleeveless Red Dress",
-                        "price":  49.99,
-                        "outfit_type":"dress"
+                        'title':  'Casablanca Dress',
+                        'img':    'assets/outfits/dress1.png',
+                        'desc':   'Adrianna Papell Women\'s Casablanca Sleeveless Red Dress',
+                        'price':  49.99,
+                        'outfit_type':'dress'
                     }`
                     )));
             });
@@ -61,16 +65,16 @@ describe('OutfitsComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(OutfitsComponent);
     component = fixture.componentInstance;
-    component.cartList=[{
-                        "title":  "Casablanca Dress",
-                        "img":    "assets/outfits/dress1.png",
-                        "desc":   "Adrianna Papell Women's Casablanca Sleeveless Red Dress",
-                        "price":  49.99,
-                        "outfit_type":"dress"
+    component.cartList = [{
+                        'title':  'Casablanca Dress',
+                        'img':    'assets/outfits/dress1.png',
+                        'desc':   'Adrianna Papell Women\'s Casablanca Sleeveless Red Dress',
+                        'price':  49.99,
+                        'outfit_type': 'dress'
                     }];
     fixture.autoDetectChanges();
   });
-  
+
   it('should create', async(() => {
     expect(component).toBeTruthy();
   }));
@@ -80,7 +84,7 @@ describe('OutfitsComponent', () => {
     expect(compiled.querySelector('app-outfit-list').outerHTML).toContain('app-outfit-list');
   }));
 
-  it('should render (1) in Carts Button', async(() => {    
+  it('should render (1) in Carts Button', async(() => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('.outfit_cart').innerHTML).toContain('1');
   }));

@@ -2,9 +2,9 @@ import { TestBed, async } from '@angular/core/testing';
 import { MaterialModule } from '@angular/material';
 import { APP_BASE_HREF } from '@angular/common';
 
-import { AppRoutingModule }     from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PageNotFoundComponent }   from './not-found.component';
+import { PageNotFoundComponent } from './not-found.component';
 import { CartComponent } from './cart/cart.component';
 import { CartService } from './cart/cart.service';
 import { OutfitsComponent } from './outfits/outfits.component';
@@ -16,7 +16,7 @@ import { OutfitTypePipe } from './outfits/outfit-type.pipe';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [AppRoutingModule,MaterialModule.forRoot()],
+      imports: [AppRoutingModule, MaterialModule.forRoot()],
       declarations: [
         AppComponent,
         PageNotFoundComponent,

@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';
 
-import { AppRoutingModule }     from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './not-found.component';
 import { OutfitsComponent } from './outfits/outfits.component';
@@ -36,7 +36,7 @@ import { CartGuard } from './cart/cart.guard';
     MaterialModule.forRoot(),
     AppRoutingModule
   ],
-  providers: [OutfitsService,CartService,CartGuard],
+  providers: [OutfitsService, CartService, CartGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

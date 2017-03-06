@@ -4,20 +4,20 @@ import { Outfit } from '../outfits/outfit.model';
 @Injectable()
 export class CartService {
 
-  cartList:Outfit[]=[];
-  
-  constructor() { }
+cartList: Outfit[] = [];
 
-  addToCart(item){
-    this.cartList.push(item);
-  }
+constructor() { }
 
-  get isEmpty():boolean{
-    return (this.cartList.length==0);
-  }
+addToCart(item) {
+  this.cartList.push(item);
+}
 
-  checkout(){
-    return 'CheckOut Successfull!';
-  }
+get isEmpty(): boolean {
+  return (this.cartList.length === 0);
+}
+
+checkout() {
+  return 'CheckOut Successfull!';
+}
 
 }

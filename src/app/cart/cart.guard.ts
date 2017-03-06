@@ -9,9 +9,7 @@ export class CartGuard implements CanActivate {
   constructor(private service: CartService) {}
   canActivate(
     next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {     
+    state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     return !this.service.isEmpty;
   }
-
-
 }

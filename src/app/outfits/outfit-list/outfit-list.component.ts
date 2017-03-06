@@ -9,9 +9,9 @@ import {Outfit} from '../outfit.model';
   templateUrl: './outfit-list.component.html',
   styleUrls: ['./outfit-list.component.css']
 })
-export class OutfitListComponent implements OnInit{
+export class OutfitListComponent implements OnInit {
 
-@Input() type: string = '';
+@Input() type: String = '';
 @Input() list: Outfit[];
 @Output() addToCart = new EventEmitter<Outfit>();
 

@@ -9,8 +9,8 @@ describe('CartGuard', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        CartService, 
-        CartGuard        
+        CartService,
+        CartGuard
       ],
       imports: [RouterTestingModule]
     });
@@ -20,13 +20,13 @@ describe('CartGuard', () => {
       expect(guard).toBeTruthy();
   }));
 
-  it('checks if a cart is Invalid',async(inject([CartService, CartGuard], (service,guard) => {
-      service.cartList=[];
+  it('checks if a cart is Invalid', async(inject([CartService, CartGuard], (service, guard) => {
+      service.cartList = [];
       expect(guard.canActivate()).toBeFalsy();
     })
   ));
 
-  it('checks if a cart is valid',async(inject([CartService, CartGuard], (service,guard) => {     
+  it('checks if a cart is valid', async(inject([CartService, CartGuard], (service, guard) => {
       service.addToCart({});
       expect(guard.canActivate()).toBeTruthy();
     })

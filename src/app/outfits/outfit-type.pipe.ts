@@ -6,8 +6,8 @@ import {Outfit} from './outfit.model';
 })
 export class OutfitTypePipe implements PipeTransform {
 
-  transform(outfits: Outfit[], type: string): any {    
-    return (outfits)?outfits.filter(value => type.includes(value.outfit_type) ):outfits;
+  transform(outfits: Outfit[], type: string): any {
+    return outfits ? outfits.filter(value => type.includes(value.outfit_type)) : outfits;
   }
 
 }

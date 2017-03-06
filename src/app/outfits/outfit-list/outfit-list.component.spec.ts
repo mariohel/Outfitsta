@@ -1,15 +1,10 @@
 import { async, ComponentFixture, TestBed , inject } from '@angular/core/testing';
 import { MaterialModule } from '@angular/material';
-import { Injectable } from '@angular/core';
-import { Http, HttpModule, XHRBackend, Response, ResponseOptions } from '@angular/http';
-import {MockBackend, MockConnection} from '@angular/http/testing';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
 
-import {OutfitsService} from '../outfits.service';
-import {OutfitTypePipe} from '../outfit-type.pipe';
-import {Outfit} from '../outfit.model';
+import { Outfit } from '../outfit.model';
+import { OutfitTypePipe } from '../outfit-type.pipe';
 import { OutfitListComponent } from './outfit-list.component';
+import { OutfitItemComponent } from '../outfit-item/outfit-item.component';
 
 describe('OutfitListComponent', () => {
   let component: OutfitListComponent;
@@ -17,13 +12,8 @@ describe('OutfitListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpModule,MaterialModule.forRoot()],
-      declarations: [ OutfitListComponent,OutfitTypePipe ],
-      providers: [
-        OutfitsService,
-        MockBackend,
-        { provide: XHRBackend, useClass: MockBackend }
-        ]      
+      imports: [MaterialModule.forRoot()],
+      declarations: [ OutfitItemComponent,OutfitListComponent,OutfitTypePipe]
     })
     .compileComponents();
   }));
@@ -48,18 +38,10 @@ describe('OutfitListComponent', () => {
     expect(component).toBeTruthy();
   }));
 
-  /*it('should render title in a md-card-title tag', async(() => {
+  /*it('should render a app-outfit-item tag in md-grid-list tag', async(() => {
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('md-card-title').innerHTML).toContain('Casablanca Dress');
-  }));
-
-  it('should render desc in a p tag', async(() => {
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('p').innerHTML).toContain('Adrianna Papell Women\'s Casablanca Sleeveless Red Dress');
-  }));
-
-  it('should render price in a md-card-subtitle tag', async(() => {
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('md-card-subtitle').innerHTML).toContain('$49.99');
+    expect(compiled.querySelector('md-grid-tile').outerHTML).toContain('app-outfit-item');
   }));*/
+
+ 
 });

@@ -10,13 +10,17 @@ import { OutfitsComponent } from './outfits/outfits.component';
 import { OutfitsService} from './outfits/outfits.service';
 import { OutfitTypePipe } from './outfits/outfit-type.pipe';
 import { OutfitListComponent } from './outfits/outfit-list/outfit-list.component';
+import { CartComponent } from './cart/cart.component';
+import { OutfitItemComponent } from './outfits/outfit-item/outfit-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OutfitsComponent,
     OutfitListComponent,
-    OutfitTypePipe
+    OutfitTypePipe,
+    CartComponent,
+    OutfitItemComponent
   ],
   imports: [
     BrowserModule,

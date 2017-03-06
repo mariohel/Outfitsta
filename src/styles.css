@@ -3,12 +3,10 @@
 @import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
 
 body {
-   font-family: Roboto, 'Helvetica Neue', sans-serif;
-}
-global{
-    background: black; /* For browsers that do not support gradients */
-    background: -webkit-radial-gradient(black, gray, black); /* Safari 5.1 to 6.0 */
-    background: -o-radial-gradient(black, gray, black); /* For Opera 11.6 to 12.0 */
-    background: -moz-radial-gradient(black, gray, black); /* For Firefox 3.6 to 15 */
-    background: radial-gradient(black, gray, black); /* Standard syntax */
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+    
+    background: rgb(29,4,38); /* Old browsers */
+    background: -moz-linear-gradient(left, rgba(29,4,38,1) 0%, rgba(74,79,8,1) 18%, rgba(10,99,99,1) 45%, rgba(102,95,32,1) 74%, rgba(158,50,82,1) 97%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(29,4,38,1) 0%,rgba(74,79,8,1) 18%,rgba(10,99,99,1) 45%,rgba(102,95,32,1) 74%,rgba(158,50,82,1) 97%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(29,4,38,1) 0%,rgba(74,79,8,1) 18%,rgba(10,99,99,1) 45%,rgba(102,95,32,1) 74%,rgba(158,50,82,1) 97%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }

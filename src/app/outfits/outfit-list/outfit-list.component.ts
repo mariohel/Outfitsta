@@ -7,8 +7,7 @@ import {Outfit} from '../outfit.model';
 @Component({
   selector: 'app-outfit-list',
   templateUrl: './outfit-list.component.html',
-  styleUrls: ['./outfit-list.component.css'],
-  providers: [OutfitsService]
+  styleUrls: ['./outfit-list.component.css']
 })
 export class OutfitListComponent implements OnInit{
 
@@ -16,12 +15,12 @@ export class OutfitListComponent implements OnInit{
 @Input() list: Outfit[];
 @Output() addToCart = new EventEmitter<Outfit>();
 
-constructor(private service: OutfitsService) {}
+constructor() {}
 
 ngOnInit() {
 }
 
-addToCartClicked(item) {
+onAddToCart(item) {
     this.addToCart.emit(item);
 }
 

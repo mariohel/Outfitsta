@@ -2,9 +2,11 @@
   position: absolute;
   right: 10px;
   top: 10px;
+  color: #fff;
 }
 
 .outfit_checkbox{
   font-weight: bold;
   padding: 25px;
+  color: #fff;
 }

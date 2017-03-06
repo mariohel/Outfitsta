@@ -11,6 +11,7 @@ import {OutfitTypePipe} from './outfit-type.pipe';
 import {Outfit} from './outfit.model';
 import { OutfitsComponent } from './outfits.component';
 import { OutfitListComponent } from './outfit-list/outfit-list.component';
+import { OutfitItemComponent } from './outfit-item/outfit-item.component';
 
 describe('OutfitsComponent', () => {
   let component: OutfitsComponent;
@@ -19,7 +20,7 @@ describe('OutfitsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [HttpModule,MaterialModule.forRoot()],
-      declarations: [ OutfitsComponent,OutfitListComponent,OutfitTypePipe],
+      declarations: [ OutfitsComponent,OutfitListComponent,OutfitItemComponent,OutfitTypePipe],
       providers: [
         OutfitsService,
         MockBackend,
@@ -45,7 +46,14 @@ describe('OutfitsComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(OutfitsComponent);
-    component = fixture.componentInstance;  
+    component = fixture.componentInstance;
+    component.cartList=[{
+                        "title":  "Casablanca Dress",
+                        "img":    "assets/outfits/dress1.png",
+                        "desc":   "Adrianna Papell Women's Casablanca Sleeveless Red Dress",
+                        "price":  49.99,
+                        "outfit_type":"dress"
+                    }];
     fixture.autoDetectChanges();
   });
   
@@ -56,6 +64,11 @@ describe('OutfitsComponent', () => {
   it('should render app-outfit-list tag', async(() => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('app-outfit-list').outerHTML).toContain('app-outfit-list');
+  }));
+
+  it('should render (1) in Carts Button', async(() => {    
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('.outfit_cart').innerHTML).toContain('1');
   }));
 
 });

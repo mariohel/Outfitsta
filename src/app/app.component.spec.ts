@@ -4,6 +4,7 @@ import { MaterialModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { OutfitsComponent } from './outfits/outfits.component';
 import { OutfitListComponent } from './outfits/outfit-list/outfit-list.component';
+import { OutfitItemComponent } from './outfits/outfit-item/outfit-item.component';
 import { OutfitsService } from './outfits/outfits.service';
 import { OutfitTypePipe } from './outfits/outfit-type.pipe';
 
@@ -15,6 +16,7 @@ describe('AppComponent', () => {
         AppComponent,
         OutfitsComponent,
         OutfitListComponent,
+        OutfitItemComponent,
         OutfitTypePipe
       ],
       providers: [{provide: OutfitsService, useValue: {}}, OutfitTypePipe ]

@@ -20,8 +20,8 @@ constructor() {}
 ngOnInit() {
 }
 
-onAddToCart(item) {
-    this.addToCart.emit(item);
+onAddToCart(item: Outfit) {
+  this.addToCart.emit(item);
 }
 
 }

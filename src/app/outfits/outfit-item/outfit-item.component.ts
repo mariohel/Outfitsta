@@ -15,7 +15,7 @@ export class OutfitItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  addToCartClicked(item) {
+  addToCartClicked(item: Outfit) {
     this.addToCart.emit(item);
   }
 

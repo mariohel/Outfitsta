@@ -1,3 +1,39 @@
-<p>
-  cart works!
-</p>
+<md-card class="checkout">  
+  <div>
+    <h2><i>Outfits</i></h2>
+    <img md-card-sm-image [src]="item.img" *ngFor="let item of outfits">
+  </div>
+  <br>
+  <h2><i>CheckOut Details</i></h2>
+  <form class="checkOutForm" [formGroup]="checkOutForm" novalidate (ngSubmit)="onSubmit(checkOutForm)" >
+    <md-input-container>
+      <input mdInput placeholder="Name" formControlName="name">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="Email" formControlName="email">
+    </md-input-container>
+      <div formGroupName="address">
+        <md-input-container>
+          <input mdInput placeholder="Street" formControlName="street">
+        </md-input-container>
+        <md-input-container>
+          <input mdInput placeholder="City" formControlName="city">
+        </md-input-container>
+        <md-input-container>
+          <input mdInput placeholder="Zip" formControlName="zip">
+        </md-input-container>     
+        <md-select placeholder="State" formControlName="state">
+              <md-option *ngFor="let state of states" [value]="state">{{state}}</md-option>
+        </md-select>          
+      </div>      
+      <div class="form-group radio">
+        <h4>Payment Method:</h4>
+        <md-radio-group formControlName="payment">
+          <md-radio-button  value="cash">Cash</md-radio-button>
+          <md-radio-button  value="visa">Visa</md-radio-button>
+          <md-radio-button  value="master">MasterCard</md-radio-button>
+        </md-radio-group>
+      </div>
+      <button class="submitCart" md-raised-button type="submit" [disabled]="checkOutForm.pristine" >CheckOut</button>
+  </form>
+</md-card>

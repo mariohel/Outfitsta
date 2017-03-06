@@ -1,0 +1,11 @@
+.checkout {
+    margin: 50px;
+}
+
+.checkout md-input-container , .checkout md-radio-button{
+    margin: 10px;
+}
+
+.submitCart {
+    margin-top: 20px;
+}

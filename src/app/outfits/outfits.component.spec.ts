@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed , inject } from '@angular/core/testing';
 import {APP_BASE_HREF} from '@angular/common';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
 import { Injectable } from '@angular/core';
 import { Http, HttpModule, XHRBackend, Response, ResponseOptions } from '@angular/http';
@@ -25,6 +26,8 @@ describe('OutfitsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
+        ReactiveFormsModule,
+        FormsModule,
         AppRoutingModule,
         HttpModule,
         MaterialModule.forRoot()

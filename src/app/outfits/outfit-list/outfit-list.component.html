@@ -1,6 +1,6 @@
 <md-grid-list class="outfit-list" cols="8" rowHeight="500px" >
   <md-grid-tile
       *ngFor="let item of list | outfitType:type ">
-      <app-outfit-item [item]="item" (addToCart)="onAddToCart(item)" ></app-outfit-item>     
+      <app-outfit-item [item]="item" (addToCart)="onAddToCart($event)" ></app-outfit-item>     
   </md-grid-tile>
 </md-grid-list>

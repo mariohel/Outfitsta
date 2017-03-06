@@ -6,4 +6,4 @@
       {{ item.label }}
     </md-checkbox>
 </section>
-<app-outfit-list [type]="selectedTypes" [list]="list" (addToCart)="onAddToCart(item)" ></app-outfit-list>
+<app-outfit-list [type]="selectedTypes" [list]="list" (addToCart)="onAddToCart($event)" ></app-outfit-list>

@@ -42,9 +42,9 @@ toggleType(item) {
   item.selected = !item.selected;
 }
 
-onAddToCart(item) {
-    this.cartList.push(item);
-    this.cartService.addToCart(item);
+onAddToCart(item: Outfit) {
+  this.cartList.push(item);
+  this.cartService.addToCart(item);
 }
 
 get selectedTypes() {

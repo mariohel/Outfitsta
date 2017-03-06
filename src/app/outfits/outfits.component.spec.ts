@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed , inject } from '@angular/core/testing';
+import {APP_BASE_HREF} from '@angular/common';
 import { MaterialModule } from '@angular/material';
 import { Injectable } from '@angular/core';
 import { Http, HttpModule, XHRBackend, Response, ResponseOptions } from '@angular/http';
@@ -6,12 +7,15 @@ import {MockBackend, MockConnection} from '@angular/http/testing';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-import {OutfitsService} from './outfits.service';
-import {OutfitTypePipe} from './outfit-type.pipe';
+import { AppRoutingModule }     from '../app-routing.module';
+import { OutfitsService } from './outfits.service';
+import { OutfitTypePipe } from './outfit-type.pipe';
 import {Outfit} from './outfit.model';
 import { OutfitsComponent } from './outfits.component';
 import { OutfitListComponent } from './outfit-list/outfit-list.component';
 import { OutfitItemComponent } from './outfit-item/outfit-item.component';
+import { CartComponent } from '../cart/cart.component';
+import { PageNotFoundComponent }   from '../not-found.component';
 
 describe('OutfitsComponent', () => {
   let component: OutfitsComponent;
@@ -19,13 +23,21 @@ describe('OutfitsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpModule,MaterialModule.forRoot()],
-      declarations: [ OutfitsComponent,OutfitListComponent,OutfitItemComponent,OutfitTypePipe],
+      imports: [AppRoutingModule,HttpModule,MaterialModule.forRoot()],
+      declarations: [ 
+        CartComponent,
+        PageNotFoundComponent,
+        OutfitsComponent,
+        OutfitListComponent,
+        OutfitItemComponent,
+        OutfitTypePipe
+      ],
       providers: [
         OutfitsService,
         MockBackend,
-        { provide: XHRBackend, useClass: MockBackend }
-        ]      
+        { provide: XHRBackend, useClass: MockBackend },
+        { provide: APP_BASE_HREF, useValue: '/'}
+      ]      
     })
     .compileComponents();
   }));

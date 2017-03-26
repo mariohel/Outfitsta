@@ -3,7 +3,7 @@
     <md-card-title>{{item.title}}</md-card-title>
     <md-card-subtitle >{{item.price | currency:'USD':true}}</md-card-subtitle>          
   </md-card-title-group>
-  <img md-card-lg-image [src]="item.img">
+  <img md-card-image [src]="item.img">
   <md-card-content>
     <p [innerHtml]="item.desc" ></p>
   </md-card-content>

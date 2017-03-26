@@ -1,7 +1,12 @@
 .outfit-card {
-  width: 150px;
+  width: 120px;
   height: 450px;
   padding: 20px;
   vertical-align: middle;
   border-radius: 5px;
+}
+
+.outfit-card img{
+  margin: 5px;
+  width: 100%;
 }

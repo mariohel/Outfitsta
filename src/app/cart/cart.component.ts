@@ -29,7 +29,7 @@ export class CartComponent implements OnInit {
     this.checkOutForm = this.fb.group({
       name: ['', Validators.required ],
       email: ['', Validators.required ],
-      payment: ['cash', Validators.required ],
+      payment: ['cash'],
       outfits: [this.outfits],
       address: this.fb.group({
         street: '',
@@ -40,14 +40,18 @@ export class CartComponent implements OnInit {
     });
   }
 
-  onSubmit(item) {
-    const message = this.service.checkout(item.value);
+  onSubmit() {
+    const message = this.service.checkout(this.checkOutForm.value);
     let dialogRef: MdDialogRef<DialogComponent>;
     dialogRef = this.dialog.open(DialogComponent);
     dialogRef.componentInstance.message = message;
     dialogRef.afterClosed().subscribe(res => {
       this.router.navigate(['/']);
     });
+  }
+
+  hasError(control) {
+    return control.errors && (control.dirty || control.touched);
   }
 
   ngOnInit() {

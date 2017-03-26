@@ -1,16 +1,29 @@
-<md-card class="checkout">  
+<md-card class="checkout" *ngIf="outfits.length>0 else emptyCart">  
   <div>
     <h2><i>Outfits</i></h2>
     <img md-card-sm-image [src]="item.img" *ngFor="let item of outfits">
   </div>
   <br>
   <h2><i>CheckOut Details</i></h2>
-  <form class="checkOutForm" [formGroup]="checkOutForm" novalidate (ngSubmit)="onSubmit(checkOutForm)" >
+  <form class="checkOutForm" novalidate [formGroup]="checkOutForm" (ngSubmit)="onSubmit()" >
     <md-input-container>
-      <input mdInput placeholder="Name" formControlName="name">
+      <input mdInput placeholder="Name" formControlName="name" required>
+      <div class="error" *ngIf="hasError(checkOutForm.controls.name)">
+        <p  [hidden]="!checkOutForm.controls.name.errors.required">
+          Name is required
+        </p>
+      </div>
     </md-input-container>
     <md-input-container>
-      <input mdInput placeholder="Email" formControlName="email">
+      <input mdInput placeholder="Email" formControlName="email" required email>
+      <div class="error" *ngIf="hasError(checkOutForm.controls.email)">
+        <p  [hidden]="!checkOutForm.controls.email.errors.required">
+          Email is required
+        </p>
+        <p  [hidden]="!checkOutForm.controls.email.errors.email">
+          Email is invalid
+        </p>
+      </div>
     </md-input-container>
       <div formGroupName="address">
         <md-input-container>
@@ -34,6 +47,7 @@
           <md-radio-button  value="master">MasterCard</md-radio-button>
         </md-radio-group>
       </div>
-      <button class="submitCart" md-raised-button type="submit" [disabled]="checkOutForm.pristine" >CheckOut</button>
+      <button class="submitCart" md-raised-button type="submit" [disabled]="checkOutForm.pristine || checkOutForm.status!='VALID'" >CheckOut</button>
   </form>
 </md-card>
+<ng-template #emptyCart>Please add something to Cart first!</ng-template>

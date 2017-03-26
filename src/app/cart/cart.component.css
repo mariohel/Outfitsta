@@ -9,3 +9,9 @@
 .submitCart {
     margin-top: 20px;
 }
+
+.error {
+    color: red;
+    padding: 5px;
+    font-size: 10px;
+}
